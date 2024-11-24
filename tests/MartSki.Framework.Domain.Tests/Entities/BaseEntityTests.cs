@@ -19,4 +19,15 @@ public class BaseEntityTests
         client.Id.GetType().Should().Be(typeof(int));
         client.Id.Should().Be(id);
     }
+
+    [TestCase("9E40C7D9-473B-4B9E-9BA9-3F811242CDDD", "2024-11-24", 2)]
+    public void BaseIdGuid_CommandeAvecGuid(string id, DateTime dateCommande, int nombreArticles)
+    {
+        Guid guid = Guid.Parse(id);
+        Commande commande = new(guid, dateCommande, nombreArticles);
+
+        commande.Id.Should().NotBe(Guid.Empty);
+        commande.Id.GetType().Should().Be(typeof(Guid));
+        commande.Id.Should().Be(guid);
+    }
 }
