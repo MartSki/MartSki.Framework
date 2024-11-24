@@ -1,4 +1,4 @@
-﻿namespace MartSki.Framework.Domain.ResultPattern
+﻿namespace MartSki.Framework.Domain.ResultPattern.Interfaces
 {
     public interface IError
     {

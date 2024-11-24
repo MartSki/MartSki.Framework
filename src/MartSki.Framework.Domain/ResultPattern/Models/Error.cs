@@ -1,4 +1,6 @@
-﻿namespace MartSki.Framework.Domain.ResultPattern.Models
+﻿using MartSki.Framework.Domain.ResultPattern.Interfaces;
+
+namespace MartSki.Framework.Domain.ResultPattern.Models
 {
     public class Error : IError
     {
