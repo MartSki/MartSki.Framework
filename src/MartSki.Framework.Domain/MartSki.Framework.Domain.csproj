@@ -4,7 +4,10 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<Version>0.1.0-dev.1</Version>
+	<Version>0.1.0</Version>
+	<Copyright>MIT</Copyright>
+	<PackageProjectUrl>https://github.com/MartSki/MartSki.Framework</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/MartSki/MartSki.Framework</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
