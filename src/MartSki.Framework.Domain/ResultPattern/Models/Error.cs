@@ -9,6 +9,8 @@
         {
             if (String.IsNullOrWhiteSpace(code))
                 throw new ArgumentNullException(nameof(Error.Code));
+            if (String.IsNullOrWhiteSpace(message))
+                throw new ArgumentNullException(nameof(Error.Message));
 
             Code = code;
             Message = message;

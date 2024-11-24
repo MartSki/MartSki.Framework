@@ -54,4 +54,40 @@ public class ErrorTests
         act.Should().Throw<ArgumentNullException>()
             .WithParameterName(nameof(Error.Code));
     }
+
+    [Test]
+    public void Erreur_MessageErreurNull_ArgumentNullException()
+    {
+        string code = "Mon code";
+        string message = null!;
+
+        Action act = () => new Error(code, message);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(Error.Message));
+    }
+
+    [Test]
+    public void Erreur_MessageErreurEmpty_ArgumentNullException()
+    {
+        string code = "Mon code";
+        string message = string.Empty;
+
+        Action act = () => new Error(code, message);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(Error.Message));
+    }
+
+    [Test]
+    public void Erreur_MessageErreurWhiteSpaces_ArgumentNullException()
+    {
+        string code = "Mon code";
+        string message = "  ";
+
+        Action act = () => new Error(code, message);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(Error.Message));
+    }
 }
