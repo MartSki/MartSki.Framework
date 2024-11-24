@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MartSki.Framework.Domain", "MartSki.Framework.Domain", "{AA042EDB-0EBF-4BC8-827D-3DE725435DAB}"
 EndProject
@@ -11,8 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MartSki.Framework.Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MartSki.Framework.Presentation", "MartSki.Framework.Presentation", "{6DDE03DE-1EE2-4007-82A1-07983F7ABB64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartSki.Framework.Domain", "src\MartSki.Framework.Domain\MartSki.Framework.Domain.csproj", "{778E3F55-4D13-413D-B73C-BA987FBEBEB6}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{778E3F55-4D13-413D-B73C-BA987FBEBEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778E3F55-4D13-413D-B73C-BA987FBEBEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778E3F55-4D13-413D-B73C-BA987FBEBEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778E3F55-4D13-413D-B73C-BA987FBEBEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{778E3F55-4D13-413D-B73C-BA987FBEBEB6} = {AA042EDB-0EBF-4BC8-827D-3DE725435DAB}
 	EndGlobalSection
 EndGlobal
