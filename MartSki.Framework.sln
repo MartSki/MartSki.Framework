@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MartSki.Framework.Domain", "MartSki.Framework.Domain", "{AA042EDB-0EBF-4BC8-827D-3DE725435DAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MartSki.Framework.Application", "MartSki.Framework.Application", "{769510EC-B515-4DC8-B6E3-FFA2B9F7E828}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MartSki.Framework.Infrastructure", "MartSki.Framework.Infrastructure", "{79551635-E1ED-418B-B0BC-32400C0C2559}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MartSki.Framework.Presentation", "MartSki.Framework.Presentation", "{6DDE03DE-1EE2-4007-82A1-07983F7ABB64}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
