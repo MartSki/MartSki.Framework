@@ -42,4 +42,19 @@ public class ResultTests
         act.Should().Throw<ArgumentNullException>()
             .WithParameterName(nameof(Result.Error));
     }
+
+    [Test]
+    public void SuccessObject_Object_ResultSuccessObject()
+    {
+        Object objet = new object();
+        Result<Object> result = Result<Object>.Success(objet);
+
+        result.IsSuccess.Should().BeTrue();
+        result.IsFailure.Should().BeFalse();
+
+        result.Error.Should().BeNull();
+
+        result.Value.GetType().Should().Be(typeof(Object));
+        result.Value.Should().Be(objet);
+    }
 }
