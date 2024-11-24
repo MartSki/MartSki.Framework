@@ -10,6 +10,9 @@ namespace MartSki.Framework.Domain.ResultPattern.Models
 
         protected Result(bool isSuccess, Error? error = null)
         {
+            if (!isSuccess && error is null)
+                throw new ArgumentNullException(nameof(Result.Error));
+
             IsSuccess = isSuccess;
             Error = error;
         }

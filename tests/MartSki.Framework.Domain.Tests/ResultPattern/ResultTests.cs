@@ -33,4 +33,13 @@ public class ResultTests
         result.Error!.Code.Should().Be(code);
         result.Error!.Message.Should().Be(message);
     }
+
+    [Test]
+    public void Failure_ErrorObjectNull_Exception()
+    {
+        Action act = () => Result.Failure(null!);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(Result.Error));
+    }
 }
