@@ -19,4 +19,18 @@ public class ResultTests
         result.IsFailure.Should().BeFalse();
         result.Error.Should().BeNull();
     }
+
+    [TestCase("Mon code erreur", "Mon message erreur")]
+    public void Failure_ErrorObject_ResultFailure(string code, string message)
+    {
+        Error error = new Error(code, message);
+        Result result = Result.Failure(error);
+
+        result.IsSuccess.Should().BeFalse();
+        result.IsFailure.Should().BeTrue();
+
+        result.Error.Should().NotBeNull();
+        result.Error!.Code.Should().Be(code);
+        result.Error!.Message.Should().Be(message);
+    }
 }
