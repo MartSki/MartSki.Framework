@@ -52,6 +52,10 @@ public class ResultTests
         result.IsSuccess.Should().BeTrue();
         result.IsFailure.Should().BeFalse();
 
+        result.Value.Should().NotBeNull();
+        result.Value.GetType().Should().Be(typeof(Object));
+        result.Value.Should().Be(objet);
+
         result.Error.Should().BeNull();
     }
 
