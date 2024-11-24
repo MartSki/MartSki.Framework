@@ -12,6 +12,8 @@ namespace MartSki.Framework.Domain.ResultPattern.Models
         }
 
         public static Result<TValue> Success(TValue value) => new Result<TValue>(true, value);
+
+        public static Result<TValue> Failure(TValue value, Error error) => new Result<TValue>(false, value, error);
     }
 
     public class Result : IResult

@@ -53,8 +53,24 @@ public class ResultTests
         result.IsFailure.Should().BeFalse();
 
         result.Error.Should().BeNull();
+    }
 
+    [TestCase("Mon code erreur", "Mon message erreur")]
+    public void FailureObject_Object_ResultFailureObject(string code, string message)
+    {
+        Error error = new Error(code, message);
+        Object objet = new object();
+        Result<Object> result = Result<Object>.Failure(objet, error);
+
+        result.IsSuccess.Should().BeFalse();
+        result.IsFailure.Should().BeTrue();
+
+        result.Value.Should().NotBeNull();
         result.Value.GetType().Should().Be(typeof(Object));
         result.Value.Should().Be(objet);
+
+        result.Error.Should().NotBeNull();
+        result.Error!.Code.Should().Be(code);
+        result.Error!.Message.Should().Be(message);
     }
 }
