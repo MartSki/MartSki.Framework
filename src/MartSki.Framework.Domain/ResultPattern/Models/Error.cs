@@ -7,6 +7,9 @@
 
         public Error(string code, string message)
         {
+            if (String.IsNullOrWhiteSpace(code))
+                throw new ArgumentNullException(nameof(Error.Code));
+
             Code = code;
             Message = message;
         }

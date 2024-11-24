@@ -18,4 +18,40 @@ public class ErrorTests
         error.Code.Should().Be(code);
         error.Message.Should().Be(message);
     }
+
+    [Test]
+    public void Erreur_CodeErreurNull_ArgumentNullException()
+    {
+        string code = null!;
+        string message = "Mon message";
+
+        Action act = () => new Error(code, message);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(Error.Code));
+    }
+
+    [Test]
+    public void Erreur_CodeErreurEmpty_ArgumentNullException()
+    {
+        string code = String.Empty;
+        string message = "Mon message";
+
+        Action act = () => new Error(code, message);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(Error.Code));
+    }
+
+    [Test]
+    public void Erreur_CodeErreurWhiteSpaces_ArgumentNullException()
+    {
+        string code = "  ";
+        string message = "Mon message";
+
+        Action act = () => new Error(code, message);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(Error.Code));
+    }
 }
