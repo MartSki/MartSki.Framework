@@ -11,6 +11,6 @@ namespace MartSki.Framework.Domain.ResultPattern.Interfaces
     {
         public bool IsSuccess { get; init; }
         public bool IsFailure { get; }
-        public Error Error { get; init; }
+        public Error[] Errors { get; init; }
     }
 }

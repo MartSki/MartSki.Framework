@@ -6,32 +6,32 @@ namespace MartSki.Framework.Domain.ResultPattern.Models
     {
         public TValue Value { get; init; }
 
-        private Result(bool isSuccess, TValue value, Error? error = null) : base(isSuccess, error)
+        private Result(bool isSuccess, TValue value, Error[]? errors = null) : base(isSuccess, errors)
         {
             Value = value;
         }
 
         public static Result<TValue> Success(TValue value) => new Result<TValue>(true, value);
 
-        public static Result<TValue> Failure(TValue value, Error error) => new Result<TValue>(false, value, error);
+        public static Result<TValue> Failure(TValue value, Error[] errors) => new Result<TValue>(false, value, errors);
     }
 
     public class Result : IResult
     {
         public bool IsSuccess { get; init; }
         public bool IsFailure => !IsSuccess;
-        public Error Error { get; init; }
+        public Error[] Errors { get; init; }
 
-        protected Result(bool isSuccess, Error? error = null)
+        protected Result(bool isSuccess, Error[]? errors = null)
         {
-            if (!isSuccess && error is null)
-                throw new ArgumentNullException(nameof(Result.Error));
+            if (!isSuccess && errors is null)
+                throw new ArgumentNullException(nameof(Result.Errors));
 
             IsSuccess = isSuccess;
-            Error = error;
+            Errors = errors;
         }
 
         public static Result Success() => new(true);
-        public static Result Failure(Error error) => new(false, error);
+        public static Result Failure(Error[] errors) => new(false, errors);
     }
 }
